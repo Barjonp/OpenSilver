@@ -216,6 +216,7 @@ namespace DotNetForHtml5.Compiler
                                         enumerableType: enumerableType,
                                         codeToAccessTheEnumerable: codeToAccessTheEnumerable,
                                         elementThatContainsTheChildrenToAdd: element,
+                                        isSLMigration: isSLMigration,
                                         reflectionOnSeparateAppDomain: reflectionOnSeparateAppDomain);
                                 }
                                 else
@@ -915,6 +916,7 @@ namespace DotNetForHtml5.Compiler
                                     enumerableType: enumerableType,
                                     codeToAccessTheEnumerable: elementUniqueNameOrThisKeyword,
                                     elementThatContainsTheChildrenToAdd: element,
+                                    isSLMigration: isSLMigration,
                                     reflectionOnSeparateAppDomain: reflectionOnSeparateAppDomain);
                             }
                         }
@@ -1467,7 +1469,13 @@ var {4} = {2}.GetValue({1});
             None, Collection, Dictionary
         }
 
-        static void GenerateCodeForAddingChildrenToCollectionOrDictionary(StringBuilder stringBuilder, EnumerableType enumerableType, string codeToAccessTheEnumerable, XElement elementThatContainsTheChildrenToAdd, ReflectionOnSeparateAppDomainHandler reflectionOnSeparateAppDomain)
+        static void GenerateCodeForAddingChildrenToCollectionOrDictionary(
+            StringBuilder stringBuilder, 
+            EnumerableType enumerableType, 
+            string codeToAccessTheEnumerable, 
+            XElement elementThatContainsTheChildrenToAdd,
+            bool isSLMigration,
+            ReflectionOnSeparateAppDomainHandler reflectionOnSeparateAppDomain)
         {
             switch (enumerableType)
             {
@@ -1494,9 +1502,18 @@ var {4} = {2}.GetValue({1});
                             bool isImplicitStyle;
                             bool isImplicitDataTemplate;
                             string childKey = GetElementXKey(child, reflectionOnSeparateAppDomain, out isImplicitStyle, out isImplicitDataTemplate);
-                            if (isImplicitStyle || isImplicitDataTemplate)
+                            if (isImplicitStyle)
                             {
                                 stringBuilder.AppendLine(string.Format("{0}[typeof({1})] = {2};", codeToAccessTheEnumerable, childKey, childUniqueName));
+                            }
+                            else if (isImplicitDataTemplate)
+                            {
+                                string key = string.Format(
+                                    "new global::{0}.DataTemplateKey(typeof({1}))",
+                                    isSLMigration ? "System.Windows" : "Windows.UI.Xaml",
+                                    childKey);
+
+                                stringBuilder.AppendLine(string.Format("{0}[{1}] = {2};", codeToAccessTheEnumerable, key, childUniqueName));
                             }
                             else
                             {
@@ -1657,7 +1674,14 @@ var {4} = {2}.GetValue({1});
             return string.Format(method, codeToPlaceAtTheBeginningOfInitializeComponent, codeToWorkWithTheRootElement, findNameCallsMerged, codeToPlaceAtTheEndOfInitializeComponent, uiElementFullyQualifiedTypeName, assemblyNameWithoutExtension, fileNameWithPathRelativeToProjectRoot);
         }
 
-        private static string CreateDataTemplateLambda(string codeToInstantiateTheDataTemplate, string dataTemplateUniqueName, string childUniqueName, string templateInstanceUniqueName, string codeToPlaceAtTheBeginningOfTheMethod, string additionalCodeToPlaceAtTheEndOfTheMethod, string namespaceSystemWindows)
+        private static string CreateDataTemplateLambda(
+            string codeToInstantiateTheDataTemplate, 
+            string dataTemplateUniqueName, 
+            string childUniqueName, 
+            string templateInstanceUniqueName, 
+            string codeToPlaceAtTheBeginningOfTheMethod, 
+            string additionalCodeToPlaceAtTheEndOfTheMethod, 
+            string namespaceSystemWindows)
         {
             string lambda = @"templateOwner_{1} => 
 {{

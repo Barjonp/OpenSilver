@@ -106,6 +106,7 @@
 		<Compile Include="System.Windows\WORKINPROGRESS\NotificationWindow.cs" />
 		<Compile Include="System.Windows\WORKINPROGRESS\WebRequestCreator.cs" />
 		<Compile Include="Windows.Foundation\WORKINPROGRESS\Point.cs" />
+		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\DescriptionViewerAutomationPeer.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Provider\WORKINPROGRESS\IDockProvider.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Text\WORKINPROGRESS\TextPatternRangeEndpoint.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Text\WORKINPROGRESS\TextUnit.cs" />
@@ -694,7 +695,7 @@
 		<Compile Include="Windows.UI.Xaml.Controls\Viewbox.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\VisualStates.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WebView.cs" />
-		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DescriptionViewer.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\DescriptionViewer.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Frame.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\LayoutTransformer.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Page.cs" />
@@ -1107,6 +1108,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Content>
     <Content Include="DefaultStyles\INTERNAL_DefaultValidationSummaryStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="DefaultStyles\INTERNAL_DefaultDescriptionViewerStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Content>
 	</ItemGroup>

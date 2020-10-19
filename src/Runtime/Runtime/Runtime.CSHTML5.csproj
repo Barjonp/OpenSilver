@@ -65,6 +65,9 @@
     <Compile Include="PublicAPI\Internal\WebRequestsHelper.cs" />
     <Compile Include="PublicAPI\Native.Html.Controls\NativeComboBox.cs" />
     <Compile Include="PublicAPI\Performance\Performance.cs" />
+    <Compile Include="Resources\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="System.Collections.ObjectModel\WORKINPROGRESS\ReadOnlyObservableCollection_1.cs" />
     <Compile Include="System.ComponentModel\CurrentChangingEventArgs.cs" />
     <Compile Include="System.ComponentModel\GroupDescription.cs" />
@@ -97,11 +100,18 @@
     <Compile Include="Windows.UI.Xaml.Controls.Primitives\WORKINPROGRESS\IItemContainerGenerator.cs" />
     <Compile Include="Windows.UI.Xaml.Controls.Primitives\WORKINPROGRESS\IRecyclingItemContainerGenerator.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\Common\Extensions.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\FocusingInvalidControlEventArgs.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\IGeneratorHost.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TileView.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TileViewItem.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationHelper.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidationItemCollection.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationMetadata.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidationSummary.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryFilters.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryItem.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryItemSource.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryItemType.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\BusyIndicator.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\DescriptionViewer.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Frame.cs" />
@@ -865,6 +875,7 @@
     <Compile Include="Windows.UI.Xaml\WORKINPROGRESS\OutOfBrowserSettings.cs" />
     <Compile Include="Windows.UI.Xaml\WORKINPROGRESS\PresentationFrameworkCollection_1.cs" />
     <Compile Include="Windows.UI.Xaml.Input\WORKINPROGRESS\TabletDeviceType.cs" />
+    <Compile Include="Windows.UI.Xaml\WORKINPROGRESS\StyleTypedPropertyAttribute.cs" />
     <Compile Include="Windows.UI.Xaml\WORKINPROGRESS\TemplateBindingExpression.cs" />
     <Compile Include="Windows.UI.Xaml\WORKINPROGRESS\TextDecoration.cs" />
     <Compile Include="Windows.UI.Xaml\WORKINPROGRESS\TextDecorationCollection.cs" />
@@ -1036,6 +1047,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="DefaultStyles\INTERNAL_DefaultValidationSummaryStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DefaultStyles\INTERNAL_DefaultViewboxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1047,6 +1062,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PagedCollectionView\PagedCollectionViewResources.resx" />
+    <EmbeddedResource Include="Resources\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System.ComponentModel\WORKINPROGRESS\" />

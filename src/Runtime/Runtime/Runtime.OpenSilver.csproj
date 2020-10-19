@@ -107,6 +107,7 @@
 		<Compile Include="System.Windows\WORKINPROGRESS\WebRequestCreator.cs" />
 		<Compile Include="Windows.Foundation\WORKINPROGRESS\Point.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\DescriptionViewerAutomationPeer.cs" />
+		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\ExpanderAutomationPeer.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Provider\WORKINPROGRESS\IDockProvider.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Text\WORKINPROGRESS\TextPatternRangeEndpoint.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Text\WORKINPROGRESS\TextUnit.cs" />
@@ -116,7 +117,10 @@
 		<Compile Include="Windows.UI.Xaml.Automation\WORKINPROGRESS\TablePatternIdentifiers.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls.Primitives\WORKINPROGRESS\VisualTreeExtensions.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\Common\Extensions.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\ExpandDirection.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\IGeneratorHost.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\InteractionHelper.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\IUpdateVisualState.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TileView.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TileViewItem.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ValidationHelper.cs" />
@@ -963,7 +967,7 @@
 		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\Application.cs" />
 		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\ApplicationUnhandledExceptionEventArgs.cs" />
 		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\EventTrigger.cs" />
-		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\FlowDirection.cs" />
+		<Compile Include="Windows.UI.Xaml\FlowDirection.cs" />
 		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\FontStretch.cs" />
 		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\Freezable.cs" />
 		<Compile Include="Windows.UI.Xaml\WORKINPROGRESS\HierarchicalDataTemplate.cs" />

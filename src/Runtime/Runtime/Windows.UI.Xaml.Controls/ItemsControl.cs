@@ -554,7 +554,7 @@ namespace Windows.UI.Xaml.Controls
             }
         }
 
-        internal bool HasItems
+        private bool HasItems
         {
             get { return this.Items.Count > 0; }
         }

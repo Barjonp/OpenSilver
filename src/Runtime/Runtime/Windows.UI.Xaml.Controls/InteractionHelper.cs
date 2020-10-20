@@ -450,10 +450,9 @@ namespace Windows.UI.Xaml.Controls
         {
             UpdateVisualState(true);
         }
-#endregion MouseLeftButtonDown
+        #endregion MouseLeftButtonDown
 
-#region MouseLeftButtonUp
-#if MIGRATION
+        #region MouseLeftButtonUp
         /// <summary>
         /// Check if the control's MouseLeftButtonUp event should be handled.
         /// </summary>
@@ -461,7 +460,11 @@ namespace Windows.UI.Xaml.Controls
         /// <returns>
         /// A value indicating whether the event should be handled.
         /// </returns>
+#if MIGRATION
         public bool AllowMouseLeftButtonUp(MouseButtonEventArgs e)
+#else
+        public bool AllowMouseLeftButtonUp(PointerRoutedEventArgs e)
+#endif
         {
             if (e == null)
             {
@@ -475,7 +478,6 @@ namespace Windows.UI.Xaml.Controls
             }
             return enabled;
         }
-#endif
 
         /// <summary>
         /// Base implementation of the virtual MouseLeftButtonUp event handler.

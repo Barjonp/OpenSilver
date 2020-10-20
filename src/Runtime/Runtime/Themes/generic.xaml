@@ -29,6 +29,8 @@
         <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultHeaderedContentControlStyle.xaml" />
         <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultValidationSummaryStyle.xaml" />
         <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultDescriptionViewerStyle.xaml" />
-        <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultHeaderedItemsControlStyle.xaml" />
+        <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultHeaderedItemsControlStyle.xaml" /> 
+        <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultTreeViewItemStyle.xaml" />
+        <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultTreeViewStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

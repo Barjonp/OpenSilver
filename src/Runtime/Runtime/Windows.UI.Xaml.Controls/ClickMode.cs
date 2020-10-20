@@ -45,13 +45,13 @@ namespace Windows.UI.Xaml.Controls
         /// </summary>
         Press = 1,
 
-#if WORKINPROGRESS
         /// <summary>
         /// Specifies that the Click event
         /// should be raised when the mouse pointer moves over the control.
         /// </summary>
+        /// <remarks>
+        /// This behavior is not implemented at the moment.
+        /// </remarks>
         Hover = 2,
-#endif
-
     }
 }

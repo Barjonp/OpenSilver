@@ -69,7 +69,13 @@ namespace Windows.UI.Xaml
         /// </returns>
         public static IList GetVisualStateGroups(DependencyObject obj) //Note: we keep this method to allow the compiler to reach the special handling code for this Attached property
         {
-            throw new NotSupportedException("Method not supported.");
+            Control control = obj as Control;
+            if (control == null)
+            {
+                return new List<VisualStateGroup>();
+            }
+            return control.INTERNAL_GetVisualStateGroups().ToList<VisualStateGroup>();
+            //throw new NotSupportedException("Method not supported.");
 
             //var list = (IList<VisualStateGroup>)obj.GetValue(VisualStateGroupsProperty);
 

@@ -32,5 +32,6 @@
         <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultHeaderedItemsControlStyle.xaml" /> 
         <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultTreeViewItemStyle.xaml" />
         <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultTreeViewStyle.xaml" />
+        <ResourceDictionary Source="../DefaultStyles/INTERNAL_DefaultButtonSpinnerStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

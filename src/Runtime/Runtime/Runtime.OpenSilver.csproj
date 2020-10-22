@@ -118,6 +118,7 @@
 		<Compile Include="Windows.UI.Xaml.Automation\WORKINPROGRESS\TableItemPatternIdentifiers.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation\WORKINPROGRESS\TablePatternIdentifiers.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls.Primitives\WORKINPROGRESS\VisualTreeExtensions.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\ButtonSpinner.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\Common\Extensions.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ExpandDirection.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\HeaderedItemsControl.cs" />
@@ -127,11 +128,15 @@
 		<Compile Include="Windows.UI.Xaml.Controls\IUpdateVisualState.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\NumericExtensions.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ScrollExtensions.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\SpinDirection.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\SpinEventArgs.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\Spinner.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TileView.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TileViewItem.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TreeViewItem.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ValidationHelper.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ValidationMetadata.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\ValidSpinDirections.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\AutoCompleteBox.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\ContentChangedEventArgs.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\ContentChangedEventHandler.cs" />
@@ -1131,6 +1136,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Content>
     <Content Include="DefaultStyles\INTERNAL_DefaultTreeViewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="DefaultStyles\INTERNAL_DefaultButtonSpinnerStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Content>
 	</ItemGroup>

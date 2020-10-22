@@ -99,6 +99,7 @@
     <Compile Include="System.Windows.Markup\WORKINPROGRESS\XmlLanguage.cs" />
     <Compile Include="Windows.UI.Xaml.Controls.Primitives\WORKINPROGRESS\IItemContainerGenerator.cs" />
     <Compile Include="Windows.UI.Xaml.Controls.Primitives\WORKINPROGRESS\IRecyclingItemContainerGenerator.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ButtonSpinner.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\Common\Extensions.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\DescriptionViewer.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ExpandDirection.cs" />
@@ -110,6 +111,9 @@
     <Compile Include="Windows.UI.Xaml.Controls\IUpdateVisualState.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\NumericExtensions.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ScrollExtensions.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\SpinDirection.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\SpinEventArgs.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\Spinner.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TileView.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TileViewItem.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TreeView.cs" />
@@ -122,6 +126,7 @@
     <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryItem.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryItemSource.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationSummaryItemType.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\ValidSpinDirections.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\BusyIndicator.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Frame.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\WORKINPROGRESS\Grid.cs" />
@@ -963,6 +968,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Content>
+    <Page Include="DefaultStyles\INTERNAL_DefaultButtonSpinnerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DefaultStyles\INTERNAL_DefaultButtonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -108,8 +108,10 @@
 		<Compile Include="Windows.Foundation\WORKINPROGRESS\Point.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\DescriptionViewerAutomationPeer.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\ExpanderAutomationPeer.cs" />
+		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\NumericUpDownAutomationPeer.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\TreeViewAutomationPeer.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\TreeViewItemAutomationPeer.cs" />
+		<Compile Include="Windows.UI.Xaml.Automation.Peers\WORKINPROGRESS\UpDownBaseAutomationPeer.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Provider\WORKINPROGRESS\IDockProvider.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Text\WORKINPROGRESS\TextPatternRangeEndpoint.cs" />
 		<Compile Include="Windows.UI.Xaml.Automation.Text\WORKINPROGRESS\TextUnit.cs" />
@@ -127,6 +129,8 @@
 		<Compile Include="Windows.UI.Xaml.Controls\ItemsControlHelper.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\IUpdateVisualState.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\NumericExtensions.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\RoutedPropertyChangingEventArgs.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\RoutedPropertyChangingEventHandler.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ScrollExtensions.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\SpinDirection.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\SpinEventArgs.cs" />
@@ -134,6 +138,10 @@
 		<Compile Include="Windows.UI.Xaml.Controls\TileView.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TileViewItem.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\TreeViewItem.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\UpDownBase.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\UpDownBase.Generic.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\UpDownParseErrorEventArgs.cs" />
+		<Compile Include="Windows.UI.Xaml.Controls\UpDownParsingEventArgs.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ValidationHelper.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ValidationMetadata.cs" />
 		<Compile Include="Windows.UI.Xaml.Controls\ValidSpinDirections.cs" />

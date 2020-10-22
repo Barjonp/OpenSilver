@@ -30,7 +30,7 @@ namespace Windows.UI.Xaml.Input
 #if MIGRATION
     public partial class MouseWheelEventArgs : MouseEventArgs
 #else
-    public partial class MouseWheelEventArgs
+    public partial class MouseWheelEventArgs : PointerRoutedEventArgs
 #endif
     {
         public int Delta { get; private set; }

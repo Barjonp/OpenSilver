@@ -110,6 +110,8 @@
     <Compile Include="Windows.UI.Xaml.Controls\ItemsControlHelper.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\IUpdateVisualState.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\NumericExtensions.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\RoutedPropertyChangingEventArgs.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\RoutedPropertyChangingEventHandler.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ScrollExtensions.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\SpinDirection.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\SpinEventArgs.cs" />
@@ -118,6 +120,10 @@
     <Compile Include="Windows.UI.Xaml.Controls\TileViewItem.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TreeView.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\TreeViewItem.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\UpDownBase.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\UpDownBase.Generic.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\UpDownParseErrorEventArgs.cs" />
+    <Compile Include="Windows.UI.Xaml.Controls\UpDownParsingEventArgs.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationHelper.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationItemCollection.cs" />
     <Compile Include="Windows.UI.Xaml.Controls\ValidationMetadata.cs" />

@@ -191,7 +191,11 @@ namespace Windows.UI.Xaml.Controls
             {
                 // revert back to old value if an event handler canceled the changing event.
                 source._ignoreValueChange = true;
+#if SL_TOOLKIT
                 source.Value = oldValue;
+#else
+                source.SetCurrentValue(ValueProperty, oldValue);
+#endif // SL_TOOLKIT
                 source._ignoreValueChange = false;
             }
         }
@@ -281,14 +285,18 @@ namespace Windows.UI.Xaml.Controls
         public sealed override void SetValue(object value)
         {
             // ningz: throw argumentexception
+#if SL_TOOLKIT
             Value = (T)value;
+#else
+            SetCurrentValue(ValueProperty, (T)value);
+#endif // SL_TOOLKIT
         }
 
         /// <summary>
         /// Builds the visual tree for the UpDownBase(of T) control when a new 
         /// template is applied.
         /// </summary>
-#if MIGRATION        
+#if MIGRATION
         public override void OnApplyTemplate()
 #else
         protected override void OnApplyTemplate()
@@ -531,7 +539,11 @@ namespace Windows.UI.Xaml.Controls
                     // although value might be the same, still format the value.
                     SetTextBoxText();
                 }
+#if SL_TOOLKIT
                 Value = newValue;
+#else
+                SetCurrentValue(ValueProperty, newValue);
+#endif // SL_TOOLKIT
             }
             else
             {
@@ -542,7 +554,11 @@ namespace Windows.UI.Xaml.Controls
                         // although value might be the same, still format the value.
                         SetTextBoxText();
                     }
+#if SL_TOOLKIT
                     Value = parsingArgs.Value;
+#else
+                    SetCurrentValue(ValueProperty, parsingArgs.Value);
+#endif // SL_TOOLKIT
                 }
                 else
                 {

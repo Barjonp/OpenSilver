@@ -95,7 +95,11 @@ namespace Windows.UI.Xaml.Controls
                 // do a check before set to avoid blowing away binding unnecessarily.
                 if (nud.Minimum != nud._requestedMin)
                 {
+#if SL_TOOLKIT
                     nud.Minimum = nud._requestedMin;
+#else
+                    nud.SetCurrentValue(MinimumProperty, nud._requestedMin);
+#endif // SL_TOOLKIT
                 }
                 nud._levelsFromRootCall--;
             }
@@ -291,7 +295,11 @@ namespace Windows.UI.Xaml.Controls
                 // do a check before set to avoid blowing away binding unnecessarily.
                 if (nud.Increment != nud._requestedInc)
                 {
+#if SL_TOOLKIT
                     nud.Increment = nud._requestedInc;
+#else
+                    nud.SetCurrentValue(IncrementProperty, nud._requestedInc);
+#endif // SL_TOOLKIT
                 }
                 nud._levelsFromRootCall--;
             }
@@ -425,12 +433,12 @@ namespace Windows.UI.Xaml.Controls
             }
         }
 
-        #region Overrides
+#region Overrides
         /// <summary>
         /// Builds the visual tree for the NumericUpDown control when a new
         /// template is applied.
         /// </summary>
-#if MIGRATION        
+#if MIGRATION
         public override void OnApplyTemplate()
 #else
         protected override void OnApplyTemplate()
@@ -539,7 +547,11 @@ namespace Windows.UI.Xaml.Controls
         /// </summary>
         protected override void OnIncrement()
         {
+#if SL_TOOLKIT
             Value = (double)((decimal)Value + (decimal)Increment);
+#else
+            SetCurrentValue(ValueProperty, (double)((decimal)Value + (decimal)Increment));
+#endif // SL_TOOLKIT
             _requestedVal = Value;
         }
 
@@ -548,7 +560,11 @@ namespace Windows.UI.Xaml.Controls
         /// </summary>
         protected override void OnDecrement()
         {
+#if SL_TOOLKIT
             Value = (double)((decimal)Value - (decimal)Increment);
+#else
+            SetCurrentValue(ValueProperty, (double)((decimal)Value - (decimal)Increment));
+#endif // SL_TOOLKIT
             _requestedVal = Value;
         }
 #endregion
@@ -619,17 +635,29 @@ namespace Windows.UI.Xaml.Controls
                 // * Maximum changed and coerced (maximum == minimum), do nothing
                 if (_requestedMax >= minimum)
                 {
+#if SL_TOOLKIT
                     SetValue(MaximumProperty, _requestedMax);
+#else
+                    SetCurrentValue(MaximumProperty, _requestedMax);
+#endif // SL_TOOLKIT
                 }
                 else if (maximum != minimum)
                 {
+#if SL_TOOLKIT
                     SetValue(MaximumProperty, minimum);
+#else
+                    SetCurrentValue(MaximumProperty, minimum);
+#endif // SL_TOOLKIT
                 }
             }
             else if (maximum < minimum)
             {
                 // _requestedMax == maximum, enforce coercion
+#if SL_TOOLKIT
                 SetValue(MaximumProperty, minimum);
+#else
+                SetCurrentValue(MaximumProperty, minimum);
+#endif // SL_TOOLKIT
             }
         }
 
@@ -648,24 +676,44 @@ namespace Windows.UI.Xaml.Controls
             {
                 if (_requestedVal >= minimum && _requestedVal <= maximum)
                 {
+#if SL_TOOLKIT
                     SetValue(ValueProperty, _requestedVal);
+#else
+                    SetCurrentValue(ValueProperty, _requestedVal);
+#endif // SL_TOOLKIT
                 }
                 else if (_requestedVal < minimum && value != minimum)
                 {
+#if SL_TOOLKIT
                     SetValue(ValueProperty, minimum);
+#else
+                    SetCurrentValue(ValueProperty, minimum);
+#endif // SL_TOOLKIT
                 }
                 else if (_requestedVal > maximum && value != maximum)
                 {
+#if SL_TOOLKIT
                     SetValue(ValueProperty, maximum);
+#else
+                    SetCurrentValue(ValueProperty, maximum);
+#endif // SL_TOOLKIT
                 }
             }
             else if (value < minimum)
             {
+#if SL_TOOLKIT
                 SetValue(ValueProperty, minimum);
+#else
+                SetCurrentValue(ValueProperty, minimum);
+#endif // SL_TOOLKIT
             }
             else if (value > maximum)
             {
+#if SL_TOOLKIT
                 SetValue(ValueProperty, maximum);
+#else
+                SetCurrentValue(ValueProperty, maximum);
+#endif // SL_TOOLKIT
             }
         }
 
@@ -713,7 +761,11 @@ namespace Windows.UI.Xaml.Controls
             {
                 // revert back to old value
                 nud._levelsFromRootCall++;
+#if SL_TOOLKIT
                 nud.SetValue(property, oldValue);
+#else
+                nud.SetCurrentValue(property, oldValue);
+#endif // SL_TOOLKIT
                 nud._levelsFromRootCall--;
 
                 // throw ArgumentException
@@ -746,7 +798,11 @@ namespace Windows.UI.Xaml.Controls
             {
                 // revert back to old value.
                 nud._levelsFromRootCall++;
+#if SL_TOOLKIT
                 nud.SetValue(e.Property, e.OldValue);
+#else
+                nud.SetCurrentValue(e.Property, e.OldValue);
+#endif // SL_TOOLKIT
                 nud._levelsFromRootCall--;
 
                 // throw ArgumentException
@@ -779,7 +835,11 @@ namespace Windows.UI.Xaml.Controls
             {
                 // revert the change
                 nud._levelsFromRootCall++;
+#if SL_TOOLKIT
                 nud.DecimalPlaces = (int)e.OldValue;
+#else
+                nud.SetCurrentValue(DecimalPlacesProperty, (int)e.OldValue);
+#endif // SL_TOOLKIT
                 nud._levelsFromRootCall--;
 
                 // throw exception
